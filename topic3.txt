@@ -1,0 +1,16 @@
+#Launch Network
+
+./network.sh up createChannel -c mychannel -ca
+
+#Deploy the Chaincode
+
+./network.sh deployCC -ccn basic -ccp ../asset-transfer-basic/chaincode-javascript/ -ccl javascript
+
+#Prepare Sample Application
+
+cd asset-transfer-basic/application-javascript
+npm install
+
+#Run  Sample Application
+
+node app.js
